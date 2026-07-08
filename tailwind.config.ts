@@ -8,26 +8,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        black: '#0a0a0a',
-        graphite: '#1a1a1a',
-        silver: '#c0c0c0',
+        black: '#1F1F1F',
+        graphite: '#2a2a2a',
+        silver: '#e6e6e6',
         white: '#ffffff',
-        cyan: {
-          400: '#22d3ee',
-          500: '#06b6d4',
-          600: '#0891b2',
-        },
-        blue: {
-          500: '#3b82f6',
-          600: '#2563eb',
-        },
+        accent: '#5739fb',
+        'accent-soft': 'rgba(87, 57, 251, 0.15)',
+        'accent-glow': 'rgba(87, 57, 251, 0.35)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Barlow Condensed"', 'sans-serif'],
+        mono: ['Inconsolata', 'monospace'],
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      fontSize: {
+        'hero': 'clamp(4rem, 12vw, 12rem)',
+        'section': 'clamp(2.5rem, 6vw, 6rem)',
+      },
+      letterSpacing: {
+        'display': '-0.04em',
+        'wide-display': '0.02em',
       },
     },
   },
