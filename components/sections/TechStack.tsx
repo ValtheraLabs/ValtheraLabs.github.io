@@ -4,15 +4,6 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { techStack } from '@/data/systems'
 
-const rowVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.08, duration: 0.5, ease: 'easeOut' },
-  }),
-}
-
 const categories: { key: keyof typeof techStack; label: string }[] = [
   { key: 'frontend', label: 'Frontend' },
   { key: 'backend', label: 'Backend' },
@@ -21,6 +12,15 @@ const categories: { key: keyof typeof techStack; label: string }[] = [
   { key: 'infrastructure', label: 'Infrastructure' },
 ]
 
+const rowVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.08, duration: 0.5, ease: 'easeOut' },
+  }),
+}
+
 export default function TechStack() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
@@ -28,16 +28,14 @@ export default function TechStack() {
   return (
     <section id="tech-stack" className="section-wrap">
       <div className="section-inner">
-        <div className="mb-20">
-          <span className="tag">[ TECHNOLOGY ]</span>
-          <span className="block text-accent font-mono text-sm mb-6 opacity-60">03.</span>
-          <h2 className="font-display font-bold text-white leading-[0.9]">
-            <span className="block text-section">TECH</span>
-            <span className="block text-section text-accent">STACK</span>
-          </h2>
-        </div>
+        <span className="block font-mono text-[11px] text-accent tracking-[0.15em] mb-2">
+          TECHNOLOGY
+        </span>
+        <h2 className="text-3xl md:text-4xl font-black text-white mb-12">
+          Technology Stack
+        </h2>
 
-        <div ref={ref} className="divide-y divide-white/[0.06]">
+        <div ref={ref} className="divide-y divide-border">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.key}
@@ -45,19 +43,17 @@ export default function TechStack() {
               variants={rowVariants}
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
-              className="flex flex-col md:flex-row md:items-baseline gap-3 md:gap-12 py-6 md:py-8"
+              className="flex items-baseline gap-4 md:gap-12 py-5"
             >
-              <span className="font-mono text-xs text-white/30 uppercase tracking-widest md:w-36 shrink-0">
+              <span className="font-mono text-sm text-silver w-24 md:w-32 shrink-0">
                 {cat.label}
               </span>
-              <p className="text-silver/70 text-base leading-relaxed">
+              <p className="text-white leading-relaxed">
                 {techStack[cat.key].join(', ')}
               </p>
             </motion.div>
           ))}
         </div>
-
-        <div className="gallery-border" />
       </div>
     </section>
   )

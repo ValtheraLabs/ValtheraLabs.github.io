@@ -8,26 +8,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        black: '#1F1F1F',
-        graphite: '#2a2a2a',
-        silver: '#e6e6e6',
-        white: '#ffffff',
-        accent: '#5739fb',
-        'accent-soft': 'rgba(87, 57, 251, 0.15)',
-        'accent-glow': 'rgba(87, 57, 251, 0.35)',
+        black: '#0C0C0C',
+        deep: '#0C0C0C',
+        surface: '#1A1A1A',
+        panel: '#141414',
+        border: '#2A2A2A',
+        silver: '#A0A0A0',
+        white: '#FFFFFF',
+        accent: '#7C3AED',
+        'accent-soft': 'rgba(124, 58, 237, 0.12)',
+        'accent-glow': 'rgba(124, 58, 237, 0.3)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['"Barlow Condensed"', 'sans-serif'],
-        mono: ['Inconsolata', 'monospace'],
-      },
-      fontSize: {
-        'hero': 'clamp(4rem, 12vw, 12rem)',
-        'section': 'clamp(2.5rem, 6vw, 6rem)',
-      },
-      letterSpacing: {
-        'display': '-0.04em',
-        'wide-display': '0.02em',
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
     },
   },

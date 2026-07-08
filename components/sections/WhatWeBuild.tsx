@@ -4,58 +4,52 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { capabilities } from '@/data/systems'
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.05 },
+  },
+}
+
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({
+  hidden: { opacity: 0, y: 20 },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.04, duration: 0.5, ease: 'easeOut' },
-  }),
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
 }
 
 export default function WhatWeBuild() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.05 })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
     <section id="what-we-build" className="section-wrap">
       <div className="section-inner">
-        <div className="mb-16">
-          <span className="tag">[ CAPABILITIES ]</span>
-          <span className="block text-accent font-mono text-sm mb-6 opacity-60">01.</span>
-          <h2 className="font-display font-bold text-white leading-[0.9]">
-            <span className="block text-section">WHAT WE</span>
-            <span className="block text-section text-accent">BUILD</span>
-          </h2>
-        </div>
+        <span className="font-mono text-[11px] text-accent tracking-[0.15em] mb-2 block">
+          CAPABILITIES
+        </span>
+        <h2 className="font-sans font-black text-3xl md:text-4xl text-white mb-12">
+          What We Build
+        </h2>
 
-        <div
+        <motion.div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/[0.06] border-t border-white/[0.06]"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10"
         >
-          {capabilities.map((item, i) => (
-            <motion.div
-              key={item.title}
-              custom={i}
-              variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              className="p-8 border-b border-white/[0.04]"
-            >
-              <span className="text-white/15 font-mono text-xs block mb-3">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <h3 className="text-white font-display font-bold text-xl mb-2 tracking-tight">
-                {item.title}
-              </h3>
-              <p className="text-silver/55 text-sm leading-relaxed">
-                {item.description}
-              </p>
+          {capabilities.map((item) => (
+            <motion.div key={item.title} variants={itemVariants}>
+              <span className="text-accent text-xl mb-2 block">{item.icon}</span>
+              <h3 className="font-semibold text-white mb-1.5">{item.title}</h3>
+              <p className="text-sm text-silver leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
-        </div>
-
-        <div className="gallery-border" />
+        </motion.div>
       </div>
     </section>
   )

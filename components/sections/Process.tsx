@@ -13,11 +13,11 @@ const containerVariants = {
 }
 
 const stepVariants = {
-  hidden: { opacity: 0, x: -30 },
+  hidden: { opacity: 0, x: -24 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 }
 
@@ -28,58 +28,49 @@ export default function Process() {
   return (
     <section id="process" className="section-wrap">
       <div className="section-inner">
+        <span className="block font-mono text-[11px] text-accent tracking-[0.15em] mb-2">
+          PROCESS
+        </span>
+        <h2 className="text-3xl md:text-4xl font-black text-white mb-16">
+          How We Work
+        </h2>
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="space-y-0"
         >
-          <p className="tag">[ METHODOLOGY ]</p>
-          <p className="font-display text-section font-black text-silver/20 leading-none tracking-display mb-4">
-            04.
-          </p>
-          <h2 className="font-display text-[clamp(2.5rem,6vw,6rem)] leading-[0.85] tracking-display font-black text-white">
-            OUR
-          </h2>
-          <h2 className="font-display text-[clamp(2.5rem,6vw,6rem)] leading-[0.85] tracking-display font-black text-accent">
-            PROCESS
-          </h2>
-        </motion.div>
+          {processSteps.map((step, i) => (
+            <motion.div
+              key={step.step}
+              variants={stepVariants}
+              className="relative flex gap-6 md:gap-10 pb-12 last:pb-0"
+            >
+              <div className="relative flex flex-col items-center">
+                <div className="w-3 h-3 rounded-full bg-accent ring-4 ring-deep z-10 shrink-0" />
+                {i < processSteps.length - 1 && (
+                  <div className="w-px flex-1 bg-border" />
+                )}
+              </div>
 
-        <div className="relative pl-8 md:pl-12">
-          <div className="absolute left-[11px] md:left-[15px] top-1 bottom-0 w-px bg-white/10" />
-
-          <motion.div
-            ref={ref}
-            className="space-y-16 md:space-y-20"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-          >
-            {processSteps.map((step) => (
-              <motion.div
-                key={step.step}
-                variants={stepVariants}
-                className="relative"
-              >
-                <div className="absolute -left-8 md:-left-12 top-[3px] w-[9px] h-[9px] rounded-full bg-accent shadow-[0_0_12px_rgba(87,57,251,0.4)]" />
-
-                <div className="max-w-3xl">
-                  <span className="font-mono text-xs text-accent/50 tracking-[0.15em]">
-                    {String(step.step).padStart(2, '0')}
-                  </span>
-                  <h3 className="font-display text-2xl md:text-4xl font-black text-white mt-2 mb-3">
+              <div className="flex items-start gap-4 md:gap-8 pt-[-2px]">
+                <span className="text-5xl font-black text-accent/30 leading-none shrink-0 select-none">
+                  {step.step}
+                </span>
+                <div className="pt-1.5">
+                  <h3 className="text-xl font-semibold text-white mb-1.5">
                     {step.title}
                   </h3>
-                  <p className="text-silver/60 text-sm md:text-base leading-relaxed max-w-2xl">
+                  <p className="text-sm text-silver leading-relaxed max-w-xl">
                     {step.description}
                   </p>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )
