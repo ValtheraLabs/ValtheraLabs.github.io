@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ValteraLabs — Brand Identity</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0A0A0A; color: #fff; font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
+.page { max-width: 1400px; margin: 0 auto; padding: 80px 60px; }
+h1 { font-size: 72px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+h2 { font-size: 42px; font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 24px; font-weight: 500; }
+p { font-size: 16px; line-height: 1.7; color: #C7C9CC; }
+.caption { font-size: 12px; letter-spacing: 0.05em; color: #6B6B6D; text-transform: uppercase; }
+.section { padding: 120px 0; border-bottom: 1px solid #1C1C1E; }
+.section:first-child { padding-top: 40px; }
+.label { font-size: 12px; letter-spacing: 0.15em; color: #6B6B6D; text-transform: uppercase; margin-bottom: 24px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+.grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 30px; }
+.swatch { height: 160px; border-radius: 12px; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; border: 1px solid rgba(255,255,255,0.05); }
+.swatch span { font-size: 12px; color: #fff; opacity: 0.7; }
+.swatch strong { font-size: 14px; color: #fff; }
+.mockup-frame { border: 1px solid #1C1C1E; border-radius: 16px; overflow: hidden; background: #0D0D0D; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.mt-4 { margin-top: 16px; }
+.mt-8 { margin-top: 32px; }
+.mt-12 { margin-top: 48px; }
+.mb-12 { margin-bottom: 48px; }
+.glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; font-family: 'Space Grotesk', sans-serif; cursor: default; text-decoration: none; }
+.btn-primary { background: #2563FF; color: #fff; }
+.btn-outline { border: 1px solid rgba(255,255,255,0.15); color: #fff; }
+.accent { color: #2563FF; }
+.violet { color: #6C3CFF; }
+.silver { color: #C7C9CC; }
+.divider { height: 1px; background: #1C1C1E; margin: 0; }
+.center { text-align: center; }
+.grid-icons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; padding: 80px 0; }
+.icon-feature { width: 48px; height: 48px; margin: 0 auto 16px; }
+@media (max-width: 768px) { .page { padding: 40px 24px; } .grid-2, .grid-3, .grid-5, .grid-6 { grid-template-columns: 1fr; } h1 { font-size: 36px; } .section { padding: 60px 0; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- SECTION 01: HERO LOGO -->
+<div class="section">
+  <div class="label">ValteraLabs — Brand Identity</div>
+  <div class="grid-2" style="align-items:center;min-height:80vh;">
+    <div>
+      <svg viewBox="0 0 200 200" width="280" height="280" style="margin-bottom:32px;">
+        <defs>
+          <linearGradient id="blade1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#E8E8E8"/>
+            <stop offset="50%" stop-color="#A0A0A0"/>
+            <stop offset="100%" stop-color="#505050"/>
+          </linearGradient>
+          <linearGradient id="blade2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#E8E8E8"/>
+            <stop offset="50%" stop-color="#A0A0A0"/>
+            <stop offset="100%" stop-color="#505050"/>
+          </linearGradient>
+          <linearGradient id="blade3" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#E8E8E8"/>
+            <stop offset="50%" stop-color="#909090"/>
+            <stop offset="100%" stop-color="#505050"/>
+          </linearGradient>
+          <linearGradient id="blade4" x1="100%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#E8E8E8"/>
+            <stop offset="50%" stop-color="#909090"/>
+            <stop offset="100%" stop-color="#505050"/>
+          </linearGradient>
+          <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#4B7BFF"/>
+            <stop offset="60%" stop-color="#2563FF"/>
+            <stop offset="100%" stop-color="#1a4fd0"/>
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- Blade top -->
+        <polygon points="100,12 112,88 100,100 88,88" fill="url(#blade1)"/>
+        <!-- Blade right -->
+        <polygon points="188,100 112,112 100,100 112,88" fill="url(#blade2)"/>
+        <!-- Blade bottom -->
+        <polygon points="100,188 88,112 100,100 112,112" fill="url(#blade3)"/>
+        <!-- Blade left -->
+        <polygon points="12,100 88,88 100,100 88,112" fill="url(#blade4)"/>
+        <!-- Center diamond -->
+        <polygon points="100,70 130,100 100,130 70,100" fill="url(#centerGlow)" filter="url(#glow)"/>
+        <!-- Inner highlight -->
+        <polygon points="100,78 120,100 100,122 80,100" fill="rgba(255,255,255,0.15)"/>
+      </svg>
+      <div style="margin-top:16px;">
+        <span style="font-size:52px;font-weight:700;letter-spacing:-0.02em;">Valtera</span>
+        <span style="font-size:52px;font-weight:700;color:#2563FF;letter-spacing:-0.02em;">Labs</span>
+      </div>
+      <div style="font-size:11px;letter-spacing:0.25em;color:#6B6B6D;text-transform:uppercase;margin-top:12px;">Building Intelligent Systems</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;justify-content:center;">
+      <div style="font-size:14px;letter-spacing:0.15em;color:#6B6B6D;text-transform:uppercase;">Brand Identity Guide</div>
+      <h1 style="font-size:56px;">ValteraLabs</h1>
+      <p style="font-size:18px;max-width:480px;">Premium technology company engineering AI systems, enterprise software, blockchain infrastructure, and intelligent automation.</p>
+      <div style="display:flex;gap:12px;margin-top:8px;">
+        <span class="btn btn-primary">Brand Guidelines</span>
+        <span class="btn btn-outline">View Portfolio</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 02: LOGO CONCEPT -->
+<div class="section">
+  <div class="label">Section 02 — Concept</div>
+  <div class="grid-2">
+    <div>
+      <h2>Logo Concept</h2>
+      <p style="margin-top:24px;max-width:540px;">The ValteraLabs symbol represents the core of intelligence and technology. Four precisely engineered geometric elements converge around a central core, symbolizing innovation, integration, scalability, security, and continuous evolution.</p>
+      <p style="margin-top:16px;max-width:540px;">Its symmetrical construction communicates balance, engineering excellence, and trust while remaining recognizable across digital and physical products.</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;">
+      <svg viewBox="0 0 200 200" width="200" height="200">
+        <polygon points="100,12 112,88 100,100 88,88" fill="url(#blade1)"/>
+        <polygon points="188,100 112,112 100,100 112,88" fill="url(#blade2)"/>
+        <polygon points="100,188 88,112 100,100 112,112" fill="url(#blade3)"/>
+        <polygon points="12,100 88,88 100,100 88,112" fill="url(#blade4)"/>
+        <polygon points="100,70 130,100 100,130 70,100" fill="url(#centerGlow)" filter="url(#glow)"/>
+      </svg>
+    </div>
+  </div>
+  <div class="grid-3" style="margin-top:48px;">
+    <div style="border-top:2px solid #2563FF;padding-top:20px;"><h3>Innovation</h3><p style="margin-top:8px;">Built on cutting-edge technology and forward-thinking engineering.</p></div>
+    <div style="border-top:2px solid #2563FF;padding-top:20px;"><h3>Integration</h3><p style="margin-top:8px;">Seamless systems working together as one unified platform.</p></div>
+    <div style="border-top:2px solid #2563FF;padding-top:20px;"><h3>Security</h3><p style="margin-top:8px;">Trust engineered into every layer of our architecture.</p></div>
+  </div>
+</div>
+
+<!-- SECTION 03: COLOR PALETTE -->
+<div class="section">
+  <div class="label">Section 03 — Color</div>
+  <h2 style="margin-bottom:48px;">Color Palette</h2>
+  <div class="grid-5">
+    <div class="swatch" style="background:#0A0A0A;"><strong>Matte Black</strong><span>#0A0A0A</span></div>
+    <div class="swatch" style="background:#1C1C1E;"><strong>Graphite</strong><span>#1C1C1E</span></div>
+    <div class="swatch" style="background:#C7C9CC;color:#0A0A0A;"><strong>Titanium Silver</strong><span>#C7C9CC</span></div>
+    <div class="swatch" style="background:#2563FF;"><strong>Electric Blue</strong><span>#2563FF</span></div>
+    <div class="swatch" style="background:#6C3CFF;"><strong>Deep Violet</strong><span>#6C3CFF</span></div>
+  </div>
+</div>
+
+<!-- SECTION 04: TYPOGRAPHY -->
+<div class="section">
+  <div class="label">Section 04 — Typography</div>
+  <h2 style="margin-bottom:48px;">Typography</h2>
+  <div class="grid-2">
+    <div style="padding:40px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;">
+      <div style="font-size:72px;font-weight:700;font-family:'Space Grotesk',sans-serif;">Aa</div>
+      <div style="margin-top:24px;">
+        <div style="font-size:11px;letter-spacing:0.15em;color:#6B6B6D;text-transform:uppercase;margin-bottom:12px;">Primary — Space Grotesk</div>
+        <div style="font-size:28px;letter-spacing:0.08em;font-weight:700;color:#C7C9CC;">ABCDEFGHIJKLM</div>
+        <div style="font-size:28px;letter-spacing:0.08em;font-weight:700;color:#C7C9CC;">NOPQRSTUVWXYZ</div>
+        <div style="font-size:24px;letter-spacing:0.05em;margin-top:8px;color:#6B6B6D;">abcdefghijklm</div>
+        <div style="font-size:24px;letter-spacing:0.05em;margin-top:4px;color:#6B6B6D;">nopqrstuvwxyz</div>
+        <div style="font-size:24px;letter-spacing:0.05em;margin-top:8px;color:#6B6B6D;">0123456789</div>
+      </div>
+    </div>
+    <div style="padding:40px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;">
+      <div style="font-size:72px;font-weight:400;font-family:'Inter',sans-serif;">Aa</div>
+      <div style="margin-top:24px;">
+        <div style="font-size:11px;letter-spacing:0.15em;color:#6B6B6D;text-transform:uppercase;margin-bottom:12px;">Secondary — Inter</div>
+        <div style="font-size:28px;letter-spacing:0.02em;font-weight:700;color:#C7C9CC;">ABCDEFGHIJKLM</div>
+        <div style="font-size:28px;letter-spacing:0.02em;font-weight:700;color:#C7C9CC;">NOPQRSTUVWXYZ</div>
+        <div style="font-size:24px;letter-spacing:0.02em;margin-top:8px;color:#6B6B6D;">abcdefghijklmnop</div>
+        <div style="font-size:24px;letter-spacing:0.02em;margin-top:4px;color:#6B6B6D;">qrstuvwxyz</div>
+        <div style="font-size:24px;letter-spacing:0.02em;margin-top:8px;color:#6B6B6D;">0123456789</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 05: LOGO LOCKUPS -->
+<div class="section">
+  <div class="label">Section 05 — Lockups</div>
+  <h2 style="margin-bottom:48px;">Logo Lockups</h2>
+  <div class="grid-3">
+    <div style="padding:40px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <div class="caption" style="margin-bottom:20px;">Horizontal</div>
+      <svg viewBox="0 0 120 120" width="48" height="48" style="display:inline-block;"><polygon points="60,8 67,53 60,60 53,53" fill="url(#blade1)"/><polygon points="112,60 67,67 60,60 67,53" fill="url(#blade2)"/><polygon points="60,112 53,67 60,60 67,67" fill="url(#blade3)"/><polygon points="8,60 53,53 60,60 53,67" fill="url(#blade4)"/><polygon points="60,42 78,60 60,78 42,60" fill="url(#centerGlow)" filter="url(#glow)"/></svg>
+      <div style="margin-top:12px;font-size:18px;font-weight:600;">Valtera<span style="color:#2563FF;">Labs</span></div>
+    </div>
+    <div style="padding:40px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <div class="caption" style="margin-bottom:20px;">Vertical Stacked</div>
+      <svg viewBox="0 0 120 120" width="48" height="48" style="display:inline-block;"><polygon points="60,8 67,53 60,60 53,53" fill="url(#blade1)"/><polygon points="112,60 67,67 60,60 67,53" fill="url(#blade2)"/><polygon points="60,112 53,67 60,60 67,67" fill="url(#blade3)"/><polygon points="8,60 53,53 60,60 53,67" fill="url(#blade4)"/><polygon points="60,42 78,60 60,78 42,60" fill="url(#centerGlow)" filter="url(#glow)"/></svg>
+      <div style="margin-top:8px;font-size:16px;font-weight:600;">Valtera</div>
+      <div style="font-size:16px;font-weight:600;color:#2563FF;">Labs</div>
+    </div>
+    <div style="padding:40px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <div class="caption" style="margin-bottom:20px;">Icon Only</div>
+      <svg viewBox="0 0 120 120" width="80" height="80" style="display:inline-block;"><polygon points="60,8 67,53 60,60 53,53" fill="url(#blade1)"/><polygon points="112,60 67,67 60,60 67,53" fill="url(#blade2)"/><polygon points="60,112 53,67 60,60 67,67" fill="url(#blade3)"/><polygon points="8,60 53,53 60,60 53,67" fill="url(#blade4)"/><polygon points="60,42 78,60 60,78 42,60" fill="url(#centerGlow)" filter="url(#glow)"/></svg>
+    </div>
+  </div>
+  <div class="grid-3" style="margin-top:24px;">
+    <div style="padding:32px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <div class="caption" style="margin-bottom:16px;">Wordmark</div>
+      <div style="font-size:24px;font-weight:600;">Valtera<span style="color:#2563FF;">Labs</span></div>
+    </div>
+    <div style="padding:32px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <div class="caption" style="margin-bottom:16px;">Centered</div>
+      <svg viewBox="0 0 120 120" width="32" height="32" style="display:block;margin:0 auto 8px;"><polygon points="60,8 67,53 60,60 53,53" fill="url(#blade1)"/><polygon points="112,60 67,67 60,60 67,53" fill="url(#blade2)"/><polygon points="60,112 53,67 60,60 67,67" fill="url(#blade3)"/><polygon points="8,60 53,53 60,60 53,67" fill="url(#blade4)"/><polygon points="60,42 78,60 60,78 42,60" fill="url(#centerGlow)" filter="url(#glow)"/></svg>
+      <div style="font-size:13px;font-weight:600;">Valtera<span style="color:#2563FF;">Labs</span></div>
+    </div>
+    <div style="padding:32px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <div class="caption" style="margin-bottom:16px;">Small Icon</div>
+      <svg viewBox="0 0 120 120" width="24" height="24" style="display:inline-block;"><polygon points="60,8 67,53 60,60 53,53" fill="url(#blade1)"/><polygon points="112,60 67,67 60,60 67,53" fill="url(#blade2)"/><polygon points="60,112 53,67 60,60 67,67" fill="url(#blade3)"/><polygon points="8,60 53,53 60,60 53,67" fill="url(#blade4)"/><polygon points="60,42 78,60 60,78 42,60" fill="url(#centerGlow)" filter="url(#glow)"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 06: MONOCHROME -->
+<div class="section">
+  <div class="label">Section 06 — Monochrome</div>
+  <h2 style="margin-bottom:48px;">Monochrome Variations</h2>
+  <div class="grid-3">
+    <div style="padding:48px;background:#fff;border-radius:16px;text-align:center;">
+      <div class="caption" style="color:#999;margin-bottom:16px;">Black Logo</div>
+      <svg viewBox="0 0 120 120" width="64" height="64" style="display:inline-block;">
+        <polygon points="60,8 67,53 60,60 53,53" fill="#0A0A0A"/>
+        <polygon points="112,60 67,67 60,60 67,53" fill="#0A0A0A"/>
+        <polygon points="60,112 53,67 60,60 67,67" fill="#0A0A0A"/>
+        <polygon points="8,60 53,53 60,60 53,67" fill="#0A0A0A"/>
+        <polygon points="60,42 78,60 60,78 42,60" fill="#0A0A0A"/>
+      </svg>
+    </div>
+    <div style="padding:48px;background:#0A0A0A;border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <div class="caption" style="margin-bottom:16px;">White Logo</div>
+      <svg viewBox="0 0 120 120" width="64" height="64" style="display:inline-block;">
+        <polygon points="60,8 67,53 60,60 53,53" fill="#fff"/>
+        <polygon points="112,60 67,67 60,60 67,53" fill="#fff"/>
+        <polygon points="60,112 53,67 60,60 67,67" fill="#fff"/>
+        <polygon points="8,60 53,53 60,60 53,67" fill="#fff"/>
+        <polygon points="60,42 78,60 60,78 42,60" fill="#fff"/>
+      </svg>
+    </div>
+    <div style="padding:48px;background:#1C1C1E;border-radius:16px;text-align:center;">
+      <div class="caption" style="color:#999;margin-bottom:16px;">Gray Logo</div>
+      <svg viewBox="0 0 120 120" width="64" height="64" style="display:inline-block;">
+        <polygon points="60,8 67,53 60,60 53,53" fill="#C7C9CC"/>
+        <polygon points="112,60 67,67 60,60 67,53" fill="#C7C9CC"/>
+        <polygon points="60,112 53,67 60,60 67,67" fill="#C7C9CC"/>
+        <polygon points="8,60 53,53 60,60 53,67" fill="#C7C9CC"/>
+        <polygon points="60,42 78,60 60,78 42,60" fill="#C7C9CC"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 07: APPLICATION ICONS -->
+<div class="section">
+  <div class="label">Section 07 — App Icons</div>
+  <h2 style="margin-bottom:48px;">Application Icons</h2>
+  <div class="grid-3">
+    <div style="padding:40px;text-align:center;">
+      <div class="caption" style="margin-bottom:16px;">64px — Black</div>
+      <div style="width:64px;height:64px;border-radius:14px;background:#0A0A0A;display:flex;align-items:center;justify-content:center;margin:0 auto;border:1px solid #1C1C1E;">
+        <svg viewBox="0 0 120 120" width="36" height="36"><polygon points="60,8 67,53 60,60 53,53" fill="#fff"/><polygon points="112,60 67,67 60,60 67,53" fill="#fff"/><polygon points="60,112 53,67 60,60 67,67" fill="#fff"/><polygon points="8,60 53,53 60,60 53,67" fill="#fff"/><polygon points="60,42 78,60 60,78 42,60" fill="#2563FF"/></svg>
+      </div>
+    </div>
+    <div style="padding:40px;text-align:center;">
+      <div class="caption" style="margin-bottom:16px;">32px — White</div>
+      <div style="width:32px;height:32px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto;border:1px solid #eee;">
+        <svg viewBox="0 0 120 120" width="18" height="18"><polygon points="60,8 67,53 60,60 53,53" fill="#0A0A0A"/><polygon points="112,60 67,67 60,60 67,53" fill="#0A0A0A"/><polygon points="60,112 53,67 60,60 67,67" fill="#0A0A0A"/><polygon points="8,60 53,53 60,60 53,67" fill="#0A0A0A"/><polygon points="60,42 78,60 60,78 42,60" fill="#2563FF"/></svg>
+      </div>
+    </div>
+    <div style="padding:40px;text-align:center;">
+      <div class="caption" style="margin-bottom:16px;">16px — Blue</div>
+      <div style="width:16px;height:16px;border-radius:4px;background:#2563FF;display:flex;align-items:center;justify-content:center;margin:0 auto;">
+        <svg viewBox="0 0 120 120" width="10" height="10"><polygon points="60,8 67,53 60,60 53,53" fill="#fff"/><polygon points="112,60 67,67 60,60 67,53" fill="#fff"/><polygon points="60,112 53,67 60,60 67,67" fill="#fff"/><polygon points="8,60 53,53 60,60 53,67" fill="#fff"/><polygon points="60,42 78,60 60,78 42,60" fill="rgba(255,255,255,0.5)"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 08: FAVICON MOCKUP -->
+<div class="section">
+  <div class="label">Section 08 — Favicon</div>
+  <h2 style="margin-bottom:48px;">Browser Tab</h2>
+  <div style="max-width:600px;border-radius:12px;overflow:hidden;border:1px solid #1C1C1E;background:#0D0D0D;">
+    <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:#1C1C1E;border-bottom:1px solid #2A2A2A;">
+      <div style="display:flex;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;background:#FF5F56;"></span><span style="width:10px;height:10px;border-radius:50%;background:#FFBD2E;"></span><span style="width:10px;height:10px;border-radius:50%;background:#27C93F;"></span></div>
+      <div style="flex:1;max-width:300px;margin:0 auto;background:#2A2A2A;border-radius:4px;padding:4px 10px;font-size:11px;color:#C7C9CC;text-align:center;font-family:'Inter',sans-serif;">valteralabs.com</div>
+    </div>
+    <div style="padding:40px;text-align:center;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+        <svg viewBox="0 0 120 120" width="24" height="24"><polygon points="60,8 67,53 60,60 53,53" fill="url(#blade1)"/><polygon points="112,60 67,67 60,60 67,53" fill="url(#blade2)"/><polygon points="60,112 53,67 60,60 67,67" fill="url(#blade3)"/><polygon points="8,60 53,53 60,60 53,67" fill="url(#blade4)"/><polygon points="60,42 78,60 60,78 42,60" fill="url(#centerGlow)" filter="url(#glow)"/></svg>
+        <span style="font-size:16px;font-weight:600;">Valtera<span style="color:#2563FF;">Labs</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 09: WEBSITE MOCKUP -->
+<div class="section">
+  <div class="label">Section 09 — Website</div>
+  <h2 style="margin-bottom:48px;">Landing Page</h2>
+  <div class="mockup-frame">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid #1C1C1E;">
+      <div style="display:flex;align-items:center;gap:24px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg viewBox="0 0 120 120" width="20" height="20"><polygon points="60,8 67,53 60,60 53,53" fill="url(#blade1)"/><polygon points="112,60 67,67 60,60 67,53" fill="url(#blade2)"/><polygon points="60,112 53,67 60,60 67,67" fill="url(#blade3)"/><polygon points="8,60 53,53 60,60 53,67" fill="url(#blade4)"/><polygon points="60,42 78,60 60,78 42,60" fill="url(#centerGlow)" filter="url(#glow)"/></svg>
+          <span style="font-size:13px;font-weight:600;">Valtera<span style="color:#2563FF;">Labs</span></span>
+        </div>
+        <div style="display:flex;gap:20px;font-size:12px;color:#C7C9CC;">
+          <span>Solutions</span><span>Services</span><span>Products</span><span>Company</span><span>Contact</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <span style="font-size:12px;padding:6px 16px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#C7C9CC;">Sign In</span>
+        <span style="font-size:12px;padding:6px 16px;background:#2563FF;border-radius:6px;color:#fff;">Get Started</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:60px 48px;">
+      <div>
+        <div style="font-size:11px;letter-spacing:0.15em;color:#6B6B6D;text-transform:uppercase;margin-bottom:16px;">ValteraLabs</div>
+        <h2 style="font-size:42px;">Building Intelligent Systems</h2>
+        <p style="margin-top:16px;">Advanced AI, Enterprise Software, Blockchain, Cloud Infrastructure and Automation Solutions.</p>
+        <div style="display:flex;gap:12px;margin-top:28px;">
+          <span class="btn btn-primary" style="font-size:13px;padding:10px 24px;">Explore Solutions</span>
+          <span class="btn btn-outline" style="font-size:13px;padding:10px 24px;">Learn More</span>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);border-radius:12px;min-height:280px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(37,99,255,0.2);">
+        <svg viewBox="0 0 200 200" width="120" height="120" opacity="0.6">
+          <polygon points="100,12 112,88 100,100 88,88" fill="url(#blade1)"/>
+          <polygon points="188,100 112,112 100,100 112,88" fill="url(#blade2)"/>
+          <polygon points="100,188 88,112 100,100 112,112" fill="url(#blade3)"/>
+          <polygon points="12,100 88,88 100,100 88,112" fill="url(#blade4)"/>
+          <polygon points="100,70 130,100 100,130 70,100" fill="url(#centerGlow)" filter="url(#glow)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 10: DASHBOARD -->
+<div class="section">
+  <div class="label">Section 10 — Dashboard</div>
+  <h2 style="margin-bottom:48px;">Enterprise Dashboard</h2>
+  <div class="mockup-frame">
+    <div style="display:grid;grid-template-columns:200px 1fr;min-height:400px;">
+      <div style="border-right:1px solid #1C1C1E;padding:20px;background:#0A0A0A;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:24px;">
+          <svg viewBox="0 0 120 120" width="18" height="18"><polygon points="60,8 67,53 60,60 53,53" fill="url(#blade1)"/><polygon points="112,60 67,67 60,60 67,53" fill="url(#blade2)"/><polygon points="60,112 53,67 60,60 67,67" fill="url(#blade3)"/><polygon points="8,60 53,53 60,60 53,67" fill="url(#blade4)"/><polygon points="60,42 78,60 60,78 42,60" fill="url(#centerGlow)" filter="url(#glow)"/></svg>
+          <span style="font-size:12px;font-weight:600;">Valtera<span style="color:#2563FF;">Labs</span></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:12px;color:#6B6B6D;">
+          <span style="color:#fff;">Overview</span><span>Analytics</span><span>Systems</span><span>AI Models</span><span>Blockchain</span><span>Automation</span><span>Security</span><span>Settings</span>
+        </div>
+      </div>
+      <div style="padding:20px;">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;">
+          <div style="padding:16px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;"><div style="font-size:11px;color:#6B6B6D;">Systems</div><div style="font-size:24px;font-weight:700;">128</div></div>
+          <div style="padding:16px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;"><div style="font-size:11px;color:#6B6B6D;">AI Models</div><div style="font-size:24px;font-weight:700;color:#2563FF;">24</div></div>
+          <div style="padding:16px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;"><div style="font-size:11px;color:#6B6B6D;">Performance</div><div style="font-size:24px;font-weight:700;color:#6C3CFF;">98.6%</div></div>
+          <div style="padding:16px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;"><div style="font-size:11px;color:#6B6B6D;">Uptime</div><div style="font-size:24px;font-weight:700;color:#2563FF;">99.9%</div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr;gap:12px;">
+          <div style="padding:20px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;">
+            <div style="font-size:11px;color:#6B6B6D;margin-bottom:16px;">Network Activity</div>
+            <svg viewBox="0 0 300 120" width="100%" height="80"><polyline points="0,100 30,80 60,90 90,60 120,70 150,40 180,50 210,30 240,45 270,20 300,35" fill="none" stroke="#2563FF" stroke-width="2"/><polyline points="0,110 30,95 60,100 90,80 120,85 150,65 180,70 210,55 240,60 270,45 300,50" fill="none" stroke="#6C3CFF" stroke-width="1.5" opacity="0.6"/></svg>
+          </div>
+          <div style="padding:20px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;">
+            <div style="font-size:11px;color:#6B6B6D;margin-bottom:12px;">Deployments</div>
+            <div style="font-size:10px;color:#6B6B6D;margin-bottom:8px;">Today</div>
+            <div style="font-size:12px;padding:4px 0;"><span style="color:#2563FF;">●</span> Backend v3.2.1</div>
+            <div style="font-size:12px;padding:4px 0;"><span style="color:#2563FF;">●</span> AI Engine update</div>
+            <div style="font-size:12px;padding:4px 0;"><span style="color:#2563FF;">●</span> Dashboard hotfix</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 11: MOBILE APP -->
+<div class="section">
+  <div class="label">Section 11 — Mobile</div>
+  <h2 style="margin-bottom:48px;">Mobile Application</h2>
+  <div class="grid-2">
+    <div style="max-width:280px;margin:0 auto;border-radius:32px;border:1px solid #1C1C1E;overflow:hidden;background:#0A0A0A;padding:40px 24px;text-align:center;">
+      <div style="width:48px;height:8px;background:#1C1C1E;border-radius:4px;margin:0 auto 32px;"></div>
+      <svg viewBox="0 0 200 200" width="80" height="80" style="margin:0 auto 16px;display:block;">
+        <polygon points="100,12 112,88 100,100 88,88" fill="url(#blade1)"/>
+        <polygon points="188,100 112,112 100,100 112,88" fill="url(#blade2)"/>
+        <polygon points="100,188 88,112 100,100 112,112" fill="url(#blade3)"/>
+        <polygon points="12,100 88,88 100,100 88,112" fill="url(#blade4)"/>
+        <polygon points="100,70 130,100 100,130 70,100" fill="url(#centerGlow)" filter="url(#glow)"/>
+      </svg>
+      <div style="font-size:18px;font-weight:600;">Valtera<span style="color:#2563FF;">Labs</span></div>
+      <div style="font-size:10px;letter-spacing:0.1em;color:#6B6B6D;margin-top:4px;">Building Intelligent Systems</div>
+    </div>
+    <div style="max-width:280px;margin:0 auto;border-radius:32px;border:1px solid #1C1C1E;overflow:hidden;background:#0A0A0A;padding:24px;">
+      <div style="width:48px;height:8px;background:#1C1C1E;border-radius:4px;margin:0 auto 20px;"></div>
+      <div class="grid-3" style="gap:12px;">
+        <div style="padding:16px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;text-align:center;">
+          <div style="font-size:18px;">📊</div>
+          <div style="font-size:9px;color:#6B6B6D;margin-top:4px;">Analytics</div>
+        </div>
+        <div style="padding:16px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;text-align:center;">
+          <div style="font-size:18px;">⛓️</div>
+          <div style="font-size:9px;color:#6B6B6D;margin-top:4px;">Blockchain</div>
+        </div>
+        <div style="padding:16px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;text-align:center;">
+          <div style="font-size:18px;">⚡</div>
+          <div style="font-size:9px;color:#6B6B6D;margin-top:4px;">Automation</div>
+        </div>
+        <div style="padding:16px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;text-align:center;">
+          <div style="font-size:18px;">🔒</div>
+          <div style="font-size:9px;color:#6B6B6D;margin-top:4px;">Security</div>
+        </div>
+        <div style="padding:16px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;text-align:center;">
+          <div style="font-size:18px;">💳</div>
+          <div style="font-size:9px;color:#6B6B6D;margin-top:4px;">Wallet</div>
+        </div>
+        <div style="padding:16px;background:#0D0D0D;border-radius:10px;border:1px solid #1C1C1E;text-align:center;">
+          <div style="font-size:18px;">⚙️</div>
+          <div style="font-size:9px;color:#6B6B6D;margin-top:4px;">Settings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 12-13: BUSINESS CARD + LETTERHEAD -->
+<div class="section">
+  <div class="label">Section 12-13 — Print</div>
+  <h2 style="margin-bottom:48px;">Business Stationery</h2>
+  <div class="grid-2">
+    <div style="max-width:380px;margin:0 auto;border-radius:8px;background:#0A0A0A;padding:32px;border:1px solid #1C1C1E;box-shadow:0 4px 20px rgba(0,0,0,0.3);">
+      <svg viewBox="0 0 200 200" width="40" height="40"><polygon points="100,12 112,88 100,100 88,88" fill="url(#blade1)"/><polygon points="188,100 112,112 100,100 112,88" fill="url(#blade2)"/><polygon points="100,188 88,112 100,100 112,112" fill="url(#blade3)"/><polygon points="12,100 88,88 100,100 88,112" fill="url(#blade4)"/><polygon points="100,70 130,100 100,130 70,100" fill="url(#centerGlow)" filter="url(#glow)"/></svg>
+      <div style="margin-top:12px;"><span style="font-size:16px;font-weight:600;">Valtera</span><span style="font-size:16px;font-weight:600;color:#2563FF;">Labs</span></div>
+      <div style="font-size:9px;color:#6B6B6D;letter-spacing:0.15em;margin-top:4px;">Building Intelligent Systems</div>
+      <div style="height:1px;background:#1C1C1E;margin:16px 0;"></div>
+      <div style="font-size:10px;color:#6B6B6D;">hello@valteralabs.com</div>
+      <div style="font-size:10px;color:#6B6B6D;">valteralabs.com</div>
+    </div>
+    <div style="max-width:500px;margin:0 auto;border-radius:4px;background:#f5f5f5;padding:40px;color:#0A0A0A;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <svg viewBox="0 0 200 200" width="28" height="28"><polygon points="100,12 112,88 100,100 88,88" fill="#0A0A0A"/><polygon points="188,100 112,112 100,100 112,88" fill="#0A0A0A"/><polygon points="100,188 88,112 100,100 112,112" fill="#0A0A0A"/><polygon points="12,100 88,88 100,100 88,112" fill="#0A0A0A"/><polygon points="100,70 130,100 100,130 70,100" fill="#2563FF"/></svg>
+        <span style="font-size:14px;font-weight:600;">Valtera<span style="color:#2563FF;">Labs</span></span>
+      </div>
+      <div style="height:2px;background:#2563FF;margin:16px 0;"></div>
+      <div style="font-size:11px;color:#6B6B6D;">ValteraLabs Inc. · 123 Innovation Drive · San Francisco, CA 94105</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 14-17: MERCH -->
+<div class="section">
+  <div class="label">Section 14-17 — Merchandise</div>
+  <h2 style="margin-bottom:48px;">Branded Merchandise</h2>
+  <div class="grid-2">
+    <div style="padding:48px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <div style="width:100%;max-width:240px;height:220px;margin:0 auto;border-radius:40px;background:linear-gradient(180deg,#1A1A1A,#0A0A0A);position:relative;border:1px solid #1C1C1E;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 200 200" width="60" height="60">
+          <polygon points="100,12 112,88 100,100 88,88" fill="url(#blade1)"/>
+          <polygon points="188,100 112,112 100,100 112,88" fill="url(#blade2)"/>
+          <polygon points="100,188 88,112 100,100 112,112" fill="url(#blade3)"/>
+          <polygon points="12,100 88,88 100,100 88,112" fill="url(#blade4)"/>
+          <polygon points="100,70 130,100 100,130 70,100" fill="url(#centerGlow)" filter="url(#glow)"/>
+        </svg>
+      </div>
+      <div class="caption" style="margin-top:16px;">Premium Black Hoodie</div>
+    </div>
+    <div style="padding:48px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <div style="width:100%;max-width:160px;height:180px;margin:0 auto;border-radius:8px;background:linear-gradient(180deg,#0A0A0A,#1A1A1A);position:relative;border:1px solid #1C1C1E;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 200 200" width="60" height="60">
+          <polygon points="100,12 112,88 100,100 88,88" fill="url(#blade1)"/>
+          <polygon points="188,100 112,112 100,100 112,88" fill="url(#blade2)"/>
+          <polygon points="100,188 88,112 100,100 112,112" fill="url(#blade3)"/>
+          <polygon points="12,100 88,88 100,100 88,112" fill="url(#blade4)"/>
+          <polygon points="100,70 130,100 100,130 70,100" fill="url(#centerGlow)" filter="url(#glow)"/>
+        </svg>
+      </div>
+      <div class="caption" style="margin-top:16px;">Coffee Mug</div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:24px;">
+    <div style="padding:48px;background:linear-gradient(135deg,rgba(37,99,255,0.05),transparent);border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <svg viewBox="0 0 200 200" width="80" height="80" style="display:block;margin:0 auto;">
+        <polygon points="100,12 112,88 100,100 88,88" fill="url(#blade1)"/>
+        <polygon points="188,100 112,112 100,100 112,88" fill="url(#blade2)"/>
+        <polygon points="100,188 88,112 100,100 112,112" fill="url(#blade3)"/>
+        <polygon points="12,100 88,88 100,100 88,112" fill="url(#blade4)"/>
+        <polygon points="100,70 130,100 100,130 70,100" fill="url(#centerGlow)" filter="url(#glow)"/>
+      </svg>
+      <div class="caption" style="margin-top:16px;">Glass Office Sign — illuminated</div>
+    </div>
+    <div style="padding:48px;background:linear-gradient(135deg,#1a1a2e,transparent);border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <div style="width:80px;height:80px;margin:0 auto;background:linear-gradient(135deg,#E8E8E8,#A0A0A0);border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,99,255,0.2);">
+        <svg viewBox="0 0 200 200" width="48" height="48">
+          <polygon points="100,12 112,88 100,100 88,88" fill="#fff"/>
+          <polygon points="188,100 112,112 100,100 112,88" fill="#fff"/>
+          <polygon points="100,188 88,112 100,100 112,112" fill="#fff"/>
+          <polygon points="12,100 88,88 100,100 88,112" fill="#fff"/>
+          <polygon points="100,70 130,100 100,130 70,100" fill="#2563FF"/>
+        </svg>
+      </div>
+      <div class="caption" style="margin-top:16px;">Brushed Aluminum Wall Logo</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 18-20: EMBOSSED + 3D + FINAL -->
+<div class="section">
+  <div class="label">Section 18-20 — Final</div>
+  <h2 style="margin-bottom:48px;">3D Render & Final Logo</h2>
+  <div class="grid-2">
+    <div style="padding:60px;background:linear-gradient(135deg,#0A0A0A,#1a1a2e);border-radius:16px;border:1px solid #1C1C1E;text-align:center;">
+      <svg viewBox="0 0 200 200" width="140" height="140" style="display:block;margin:0 auto;filter:drop-shadow(0 20px 60px rgba(37,99,255,0.3));">
+        <polygon points="100,12 112,88 100,100 88,88" fill="url(#blade1)"/>
+        <polygon points="188,100 112,112 100,100 112,88" fill="url(#blade2)"/>
+        <polygon points="100,188 88,112 100,100 112,112" fill="url(#blade3)"/>
+        <polygon points="12,100 88,88 100,100 88,112" fill="url(#blade4)"/>
+        <polygon points="100,70 130,100 100,130 70,100" fill="url(#centerGlow)" filter="url(#glow)"/>
+      </svg>
+      <div class="caption" style="margin-top:24px;">Metallic 3D Render — Brushed Aluminum + Blue Core</div>
+    </div>
+    <div style="padding:48px;background:#0D0D0D;border-radius:16px;border:1px solid #1C1C1E;display:flex;flex-direction:column;justify-content:center;">
+      <div class="caption" style="margin-bottom:24px;">Final Horizontal Lockup</div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <svg viewBox="0 0 200 200" width="56" height="56">
+          <polygon points="100,12 112,88 100,100 88,88" fill="url(#blade1)"/>
+          <polygon points="188,100 112,112 100,100 112,88" fill="url(#blade2)"/>
+          <polygon points="100,188 88,112 100,100 112,112" fill="url(#blade3)"/>
+          <polygon points="12,100 88,88 100,100 88,112" fill="url(#blade4)"/>
+          <polygon points="100,70 130,100 100,130 70,100" fill="url(#centerGlow)" filter="url(#glow)"/>
+        </svg>
+        <div>
+          <div style="font-size:36px;font-weight:700;letter-spacing:-0.02em;">Valtera<span style="color:#2563FF;">Labs</span></div>
+          <div style="font-size:10px;letter-spacing:0.2em;color:#6B6B6D;text-transform:uppercase;">Building Intelligent Systems</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM: FEATURES -->
+<div class="section" style="border-bottom:none;">
+  <div class="label">Core Values</div>
+  <h2 style="margin-bottom:48px;text-align:center;">What We Stand For</h2>
+  <div class="grid-3" style="text-align:center;">
+    <div style="padding:32px;">
+      <div style="width:48px;height:48px;margin:0 auto 16px;border-radius:12px;background:rgba(37,99,255,0.1);display:flex;align-items:center;justify-content:center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563FF" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3 style="font-size:18px;">Innovation</h3>
+      <p style="font-size:13px;margin-top:8px;">We build what's next.</p>
+    </div>
+    <div style="padding:32px;">
+      <div style="width:48px;height:48px;margin:0 auto 16px;border-radius:12px;background:rgba(37,99,255,0.1);display:flex;align-items:center;justify-content:center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563FF" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.32 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      </div>
+      <h3 style="font-size:18px;">Precision</h3>
+      <p style="font-size:13px;margin-top:8px;">Engineering with accuracy.</p>
+    </div>
+    <div style="padding:32px;">
+      <div style="width:48px;height:48px;margin:0 auto 16px;border-radius:12px;background:rgba(37,99,255,0.1);display:flex;align-items:center;justify-content:center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563FF" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+      </div>
+      <h3 style="font-size:18px;">Scalability</h3>
+      <p style="font-size:13px;margin-top:8px;">Systems that grow with you.</p>
+    </div>
+    <div style="padding:32px;">
+      <div style="width:48px;height:48px;margin:0 auto 16px;border-radius:12px;background:rgba(37,99,255,0.1);display:flex;align-items:center;justify-content:center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563FF" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3 style="font-size:18px;">Reliability</h3>
+      <p style="font-size:13px;margin-top:8px;">Built for performance.</p>
+    </div>
+    <div style="padding:32px;">
+      <div style="width:48px;height:48px;margin:0 auto 16px;border-radius:12px;background:rgba(37,99,255,0.1);display:flex;align-items:center;justify-content:center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563FF" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </div>
+      <h3 style="font-size:18px;">Integrity</h3>
+      <p style="font-size:13px;margin-top:8px;">Trust in every layer.</p>
+    </div>
+    <div style="padding:32px;">
+      <div style="width:48px;height:48px;margin:0 auto 16px;border-radius:12px;background:rgba(37,99,255,0.1);display:flex;align-items:center;justify-content:center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563FF" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <h3 style="font-size:18px;">Excellence</h3>
+      <p style="font-size:13px;margin-top:8px;">No compromise.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="padding:40px 0 80px;text-align:center;border-top:1px solid #1C1C1E;">
+  <div class="caption" style="color:#6B6B6D;">ValteraLabs — Brand Identity Guide</div>
+  <div style="font-size:11px;color:#6B6B6D;margin-top:8px;">© 2026 ValteraLabs. All rights reserved.</div>
+</div>
+
+</div>
+</body>
+</html>
