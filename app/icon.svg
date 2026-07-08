@@ -1,0 +1,28 @@
+<svg viewBox="0 0 200 200" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="b1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8E8E8"/><stop offset="50%" stop-color="#A0A0A0"/><stop offset="100%" stop-color="#505050"/>
+    </linearGradient>
+    <linearGradient id="b2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8E8E8"/><stop offset="50%" stop-color="#A0A0A0"/><stop offset="100%" stop-color="#505050"/>
+    </linearGradient>
+    <linearGradient id="b3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E8E8E8"/><stop offset="50%" stop-color="#909090"/><stop offset="100%" stop-color="#505050"/>
+    </linearGradient>
+    <linearGradient id="b4" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#E8E8E8"/><stop offset="50%" stop-color="#909090"/><stop offset="100%" stop-color="#505050"/>
+    </linearGradient>
+    <radialGradient id="cg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7C3AED"/><stop offset="60%" stop-color="#6D28D9"/><stop offset="100%" stop-color="#5B21B6"/>
+    </radialGradient>
+    <filter id="gl">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <polygon points="100,12 112,88 100,100 88,88" fill="url(#b1)"/>
+  <polygon points="188,100 112,112 100,100 112,88" fill="url(#b2)"/>
+  <polygon points="100,188 88,112 100,100 112,112" fill="url(#b3)"/>
+  <polygon points="12,100 88,88 100,100 88,112" fill="url(#b4)"/>
+  <polygon points="100,68 132,100 100,132 68,100" fill="url(#cg)" filter="url(#gl)"/>
+</svg>

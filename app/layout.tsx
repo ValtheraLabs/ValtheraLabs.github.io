@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'ValtheraLabs — Engineering Intelligent Digital Systems',
   description: 'ValtheraLabs builds premium AI systems, enterprise web applications, blockchain infrastructure, smart contracts, DEX platforms, trading dashboards, automation tools, and cloud-native software.',
   keywords: ['AI', 'blockchain', 'web development', 'smart contracts', 'DEX', 'trading bots', 'SaaS', 'cybersecurity', 'ValtheraLabs'],
+  icons: {
+    icon: { url: '/icon.svg', type: 'image/svg+xml' },
+  },
   openGraph: {
     title: 'ValtheraLabs — Engineering Intelligent Digital Systems',
     description: 'Premium technology company building AI systems, web applications, blockchain infrastructure, and developer tools.',
