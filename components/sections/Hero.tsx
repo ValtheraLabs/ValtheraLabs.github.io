@@ -1,129 +1,58 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
+import { motion, useReducedMotion } from 'framer-motion'
 import Logo from '@/components/ui/Logo'
 
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
-  },
-}
+const HeroScene = dynamic(() => import('@/components/three/HeroScene'), { ssr: false })
 
-const slideUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
-}
-
-
+const nav = [
+  ['Work', '#work'],
+  ['Capabilities', '#capabilities'],
+  ['Process', '#process'],
+  ['Contact', '#contact'],
+]
 
 export default function Hero() {
-  return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-deep">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+  const reducedMotion = useReducedMotion()
+  const reveal = reducedMotion ? {} : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } }
 
-      {/* Nav */}
-      <div className="fixed top-0 left-0 right-0 z-50 px-6 py-4" style={{background:'rgba(12,12,12,0.85)',backdropFilter:'blur(16px)',borderBottom:'1px solid rgba(255,255,255,0.04)'}}>
-        <div className="section-inner flex items-center justify-between">
-          <Logo size={28} />
-          <div className="hidden md:flex items-center gap-8 text-xs text-silver/50 tracking-wider uppercase">
-            <span className="hover:text-accent transition cursor-default">Systems</span>
-            <span className="hover:text-accent transition cursor-default">Services</span>
-            <span className="hover:text-accent transition cursor-default">Company</span>
-            <span className="hover:text-accent transition cursor-default">Contact</span>
+  return (
+    <section className="hero-shell" aria-labelledby="hero-title">
+      <header className="site-nav">
+        <div className="section-inner nav-inner">
+          <a href="#main-content" aria-label="ValtheraLabs home"><Logo size={32} /></a>
+          <nav aria-label="Primary navigation" className="nav-links">
+            {nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
+          </nav>
+          <a className="nav-cta" href="mailto:hello@valtheralabs.com?subject=Project%20inquiry">Initiate project</a>
+        </div>
+      </header>
+
+      <div className="hero-grid section-inner">
+        <motion.div className="hero-copy" {...reveal} transition={{ duration: .65 }}>
+          <p className="eyebrow"><span className="status-dot" /> AI · WEB3 · DIGITAL INFRASTRUCTURE</p>
+          <h1 id="hero-title">We engineer systems for the <span>next digital frontier.</span></h1>
+          <p className="hero-lede">From agentic workflows and real-time platforms to high-integrity on-chain systems—designed, built, and shipped end to end.</p>
+          <div className="hero-actions">
+            <a className="button-primary" href="mailto:hello@valtheralabs.com?subject=Project%20inquiry">Discuss a project <span aria-hidden="true">↗</span></a>
+            <a className="button-secondary" href="#work">View selected work <span aria-hidden="true">↓</span></a>
           </div>
+        </motion.div>
+
+        <div className="hero-visual" aria-hidden="true">
+          {!reducedMotion && <div className="canvas-wrap"><HeroScene /></div>}
+          <div className="orbit orbit-one" /><div className="orbit orbit-two" />
+          <div className="scene-label label-one">NODE_01 / ACTIVE</div>
+          <div className="scene-label label-two">SIGNAL / STABLE</div>
         </div>
       </div>
 
-      <motion.div className="section-inner relative z-10 w-full" variants={fadeIn} initial="hidden" animate="visible">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 min-h-screen py-24">
-          <motion.div className="flex-1 space-y-8" variants={fadeIn}>
-            <motion.span
-              className="block font-mono text-xs uppercase tracking-[0.25em] text-silver/40"
-              variants={slideUp}
-            >
-              ValtheraLabs
-            </motion.span>
-
-            <div className="space-y-0">
-              <motion.h1
-                className="font-sans font-black text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight text-white"
-                variants={slideUp}
-              >
-                Engineering{' '}
-                <span className="text-accent">Intelligent</span>
-              </motion.h1>
-              <motion.h1
-                className="font-sans font-black text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight text-white"
-                variants={slideUp}
-              >
-                Digital Systems
-              </motion.h1>
-            </div>
-
-            <motion.p
-              className="text-silver max-w-lg leading-relaxed text-base md:text-lg"
-              variants={slideUp}
-            >
-              Premium AI systems, enterprise web applications, blockchain infrastructure, and developer tools.
-            </motion.p>
-
-            <motion.div className="flex flex-wrap gap-4 pt-2" variants={slideUp}>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center bg-accent text-white rounded-lg px-6 py-3 font-medium transition-all duration-300 hover:bg-accent/90 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)]"
-              >
-                Start a Project
-              </a>
-              <a
-                href="#systems"
-                className="inline-flex items-center justify-center border border-border text-silver rounded-lg px-6 py-3 font-medium transition-all duration-300 hover:border-accent/50"
-              >
-                Explore Systems
-              </a>
-            </motion.div>
-
-            <motion.div className="pt-16 hidden lg:block" variants={slideUp}>
-              <span className="font-mono text-[10px] text-silver/20 tracking-[0.2em]">
-                SCROLL &darr;
-              </span>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="flex-1 flex justify-center lg:justify-end"
-            initial={{ opacity: 0, x: 60, rotateY: -10 }}
-            animate={{ opacity: 1, x: 0, rotateY: -5 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <div
-              className="mockup-frame w-full max-w-lg"
-              style={{ transform: 'perspective(1000px) rotateY(-5deg) rotateX(2deg)' }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = 'perspective(1000px) rotateY(-8deg) rotateX(4deg)'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = 'perspective(1000px) rotateY(-5deg) rotateX(2deg)'
-              }}
-            >
-              <div className="mockup-dots">
-                <span className="mockup-dot" />
-                <span className="mockup-dot" />
-                <span className="mockup-dot" />
-              </div>
-              <div className="p-10 flex flex-col items-center justify-center gap-4 min-h-[280px]">
-                <Logo size={110} showWordmark={false} />
-                <span className="text-lg font-semibold tracking-tight">Valthera<span className="text-accent">Labs</span></span>
-                <span className="font-mono text-[10px] tracking-[0.2em] text-silver/30 uppercase">Engineering Intelligent Systems</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </motion.div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+      <div className="telemetry section-inner" aria-label="Core disciplines">
+        {['AI AGENTS', 'REAL-TIME PLATFORMS', 'ON-CHAIN SYSTEMS', 'CLOUD INFRASTRUCTURE'].map((item, i) => (
+          <span key={item}><b>0{i + 1}</b>{item}</span>
+        ))}
+      </div>
     </section>
   )
 }

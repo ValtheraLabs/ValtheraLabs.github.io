@@ -1,94 +1,45 @@
 # ValtheraLabs
 
-**Engineering Intelligent Digital Systems**
+Futuristic, cinematic company site for ValtheraLabs.
 
-**https://valtheralabs.github.io**
+## Stack
 
-ValtheraLabs company website — premium cinematic 3D technology showcase built with Next.js 14, Three.js, GSAP, and Framer Motion.
+- Next.js 14 static export
+- React 18 and TypeScript
+- React Three Fiber / Three.js hero scene
+- Framer Motion with reduced-motion fallback
+- Tailwind CSS plus a custom responsive design system
 
-## Tech Stack
-
-| Layer | Technologies |
-|-------|-------------|
-| Framework | Next.js 14, React 18, TypeScript |
-| Styling | Tailwind CSS, Glassmorphism design system |
-| 3D Graphics | Three.js, React Three Fiber, Drei |
-| Animations | GSAP, ScrollTrigger, Framer Motion |
-| Scroll | Lenis smooth scroll |
-| Font | Inter |
-
-## Sections
-
-1. **Loader** — Cinematic Three.js loading animation with rotating octahedron and particles
-2. **Hero** — Full-viewport interactive 3D scene with emblem, orbiting particles, neural network lines, and cinematic camera
-3. **What We Build** — 14 capability cards (AI, Web, Blockchain, Infrastructure)
-4. **Featured Systems** — 6 premium showcases with alternating layouts
-5. **Technology Stack** — 25+ technologies across 5 categories
-6. **Process** — 7-step development methodology timeline
-7. **Why ValtheraLabs** — 7 brand pillar glassmorphism cards
-8. **Contact** — CTA section with footer
-
-## Getting Started
+## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-## Build
+## Verification
 
 ```bash
+npm test
+npm run lint
 npm run build
+npx serve out
 ```
 
-Static export output in `out/`.
-
-## Project Structure
-
-```
-├── app/
-│   ├── globals.css         # Global styles + Tailwind
-│   ├── layout.tsx          # Root layout + SEO metadata
-│   └── page.tsx            # Main page (Lenis + section imports)
-├── components/
-│   ├── sections/           # Page sections
-│   │   ├── Contact.tsx
-│   │   ├── FeaturedSystems.tsx
-│   │   ├── Hero.tsx
-│   │   ├── Loader.tsx
-│   │   ├── Process.tsx
-│   │   ├── TechStack.tsx
-│   │   ├── WhatWeBuild.tsx
-│   │   └── WhyValthera.tsx
-│   ├── three/              # Three.js 3D components
-│   │   ├── Emblem.tsx
-│   │   ├── HeroScene.tsx
-│   │   ├── LoaderScene.tsx
-│   │   └── Particles.tsx
-│   └── ui/                 # Reusable UI components
-│       ├── Button.tsx
-│       └── GlassCard.tsx
-├── data/
-│   └── systems.ts          # All content data
-├── public/
-│   ├── .nojekyll
-│   ├── robots.txt
-│   └── sitemap.xml
-├── .github/workflows/
-│   └── deploy.yml          # GitHub Pages deploy workflow
-└── next.config.js
-```
+The production build is written to `out/` and contains only static assets.
 
 ## Deployment
 
-Push to `main` triggers GitHub Actions workflow:
+The repository is configured for GitHub Pages through `.github/workflows/deploy.yml`. A push to `main` builds the static export and deploys `out/`.
 
-1. Builds static export (`npm run build` → `out/`)
-2. Uploads with `actions/upload-pages-artifact`
-3. Deploys with `actions/deploy-pages`
+The same build can be imported by Vercel, but Vercel is not required unless server-side features are added later.
 
-## License
+## Experience and accessibility
 
-MIT
+- Real-time 3D hero scene on capable devices
+- Static fallback for reduced-motion users
+- Keyboard focus treatment and skip navigation
+- Responsive layouts for mobile, tablet, and desktop
+- Truthful representative-system labels instead of unsupported client claims
+
+Smart-contract engineering guidance and implementation are not substitutes for an independent security audit.

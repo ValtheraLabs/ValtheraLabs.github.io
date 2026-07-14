@@ -1,55 +1,24 @@
 'use client'
-
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { capabilities } from '@/data/systems'
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.05 },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' },
-  },
-}
-
 export default function WhatWeBuild() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
-
+  const reduced = useReducedMotion()
   return (
-    <section id="what-we-build" className="section-wrap">
+    <section id="capabilities" className="section-wrap">
       <div className="section-inner">
-        <span className="font-mono text-[11px] text-accent tracking-[0.15em] mb-2 block">
-          CAPABILITIES
-        </span>
-        <h2 className="font-sans font-black text-3xl md:text-4xl text-white mb-12">
-          What We Build
-        </h2>
-
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10"
-        >
-          {capabilities.map((item) => (
-            <motion.div key={item.title} variants={itemVariants}>
-              <span className="text-accent text-xl mb-2 block">{item.icon}</span>
-              <h3 className="font-semibold text-white mb-1.5">{item.title}</h3>
-              <p className="text-sm text-silver leading-relaxed">{item.description}</p>
-            </motion.div>
+        <p className="section-kicker">CAPABILITY CONSTELLATION</p>
+        <h2 className="section-title">Four disciplines.<br/>One build system.</h2>
+        <p className="section-intro">Strategy, interface, infrastructure, and delivery stay connected—so ambitious products do not fracture between specialists.</p>
+        <div className="capability-grid" style={{marginTop:'3rem'}}>
+          {capabilities.map((item, i) => (
+            <motion.article key={item.title} className="capability-card" initial={reduced ? false : {opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.2}} transition={{delay:i*.06}}>
+              <span className="capability-number">{item.number} / SYSTEM</span>
+              <h3>{item.title}</h3><p>{item.description}</p>
+              <ul className="capability-services">{item.services.map(service=><li key={service}>↳ {service}</li>)}</ul>
+            </motion.article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )
