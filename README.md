@@ -2,15 +2,15 @@
 
 **Engineering Intelligent Digital Systems**
 
-**https://valtheralabs.github.io**
+**https://valtheralabs.io**
 
-ValtheraLabs company website — premium cinematic 3D technology showcase built with Next.js 14, Three.js, GSAP, and Framer Motion.
+ValtheraLabs company website — cinematic 3D technology showcase built with Next.js, Three.js, GSAP, and Framer Motion.
 
 ## Tech Stack
 
 | Layer | Technologies |
 |-------|-------------|
-| Framework | Next.js 14, React 18, TypeScript |
+| Framework | Next.js 15, React 18, TypeScript |
 | Styling | Tailwind CSS, Glassmorphism design system |
 | 3D Graphics | Three.js, React Three Fiber, Drei |
 | Animations | GSAP, ScrollTrigger, Framer Motion |
@@ -31,7 +31,7 @@ ValtheraLabs company website — premium cinematic 3D technology showcase built 
 ## Getting Started
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -81,13 +81,9 @@ Static export output in `out/`.
 └── next.config.js
 ```
 
-## Deployment
+## Validation and deployment
 
-Push to `main` triggers GitHub Actions workflow:
-
-1. Builds static export (`npm run build` → `out/`)
-2. Uploads with `actions/upload-pages-artifact`
-3. Deploys with `actions/deploy-pages`
+Pull requests run linting, type checking, regression tests, dependency audit, and the static production build. Production is deployed from GitHub through Cloudflare Pages native Git integration. See `docs/CLOUDFLARE_DEPLOYMENT.md` and `docs/DOMAINS_AND_DNS.md`.
 
 ## License
 

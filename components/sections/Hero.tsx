@@ -20,7 +20,7 @@ const slideUp = {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-deep">
+    <section id="company" className="relative min-h-screen flex items-center overflow-hidden bg-deep">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
 
@@ -29,10 +29,10 @@ export default function Hero() {
         <div className="section-inner flex items-center justify-between">
           <Logo size={28} />
           <div className="hidden md:flex items-center gap-8 text-xs text-silver/50 tracking-wider uppercase">
-            <span className="hover:text-accent transition cursor-default">Systems</span>
-            <span className="hover:text-accent transition cursor-default">Services</span>
-            <span className="hover:text-accent transition cursor-default">Company</span>
-            <span className="hover:text-accent transition cursor-default">Contact</span>
+            <a className="hover:text-accent transition" href="#featured-systems">Systems</a>
+            <a className="hover:text-accent transition" href="#what-we-build">Services</a>
+            <a className="hover:text-accent transition" href="#company">Company</a>
+            <a className="hover:text-accent transition" href="#contact">Contact</a>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function Hero() {
               className="text-silver max-w-lg leading-relaxed text-base md:text-lg"
               variants={slideUp}
             >
-              Premium AI systems, enterprise web applications, blockchain infrastructure, and developer tools.
+              AI systems, web applications, blockchain software, and developer tools engineered for real products.
             </motion.p>
 
             <motion.div className="flex flex-wrap gap-4 pt-2" variants={slideUp}>
@@ -78,7 +78,7 @@ export default function Hero() {
                 Start a Project
               </a>
               <a
-                href="#systems"
+                href="#featured-systems"
                 className="inline-flex items-center justify-center border border-border text-silver rounded-lg px-6 py-3 font-medium transition-all duration-300 hover:border-accent/50"
               >
                 Explore Systems

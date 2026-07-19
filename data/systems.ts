@@ -6,7 +6,7 @@ export const capabilities = [
   },
   {
     title: 'Web Applications',
-    description: 'Enterprise-grade web apps with Next.js, React, and modern full-stack architectures.',
+    description: 'Modern web applications with Next.js, React, and maintainable full-stack architectures.',
     icon: '◈',
   },
   {
@@ -41,7 +41,7 @@ export const capabilities = [
   },
   {
     title: 'Smart Contracts',
-    description: 'Secure, gas-optimized Solidity contracts with formal verification and upgradeability patterns.',
+    description: 'Solidity contract development with testing, deployment controls, and upgradeability patterns where appropriate.',
     icon: '▤',
   },
   {
@@ -66,7 +66,7 @@ export const capabilities = [
   },
   {
     title: 'Cybersecurity',
-    description: 'Security audits, penetration testing, smart contract audits, and secure architecture reviews.',
+    description: 'Threat modeling, defensive architecture reviews, dependency review, and secure engineering practices.',
     icon: '▩',
   },
 ]
@@ -74,27 +74,28 @@ export const capabilities = [
 export const featuredSystems = [
   {
     title: 'AI Agent Platform',
-    description: 'Multi-agent orchestration system with RAG pipelines, tool use, and autonomous task execution capabilities deployed for enterprise clients.',
+    description: 'AI agent architecture for retrieval pipelines, tool use, and supervised task execution.',
     tech: ['OpenAI', 'LangChain', 'RAG', 'Next.js'],
   },
   {
     title: 'DEX Exchange Interface',
-    description: 'Feature-rich decentralized exchange frontend with limit orders, liquidity pool management, and real-time price charts.',
+    description: 'ValtheraSwap product interface for decentralized swaps, limit orders, liquidity tools, and market data.',
     tech: ['Solidity', 'React', '0x', 'Ethers'],
+    href: 'https://valtheraswap.io',
   },
   {
     title: 'Trading Bot Dashboard',
-    description: 'Real-time trading bot management platform with strategy backtesting, performance analytics, and multi-exchange support.',
+    description: 'Trading dashboard architecture for strategy configuration, backtesting, analytics, and exchange integrations.',
     tech: ['Python', 'FastAPI', 'Redis', 'WebSocket'],
   },
   {
     title: 'SaaS Boilerplate',
-    description: 'Production-ready SaaS starter with authentication, billing, team management, and multi-tenant database architecture.',
+    description: 'SaaS starter architecture covering authentication, billing, team management, and multi-tenant data models.',
     tech: ['Next.js', 'Stripe', 'PostgreSQL', 'Docker'],
   },
   {
     title: 'Portfolio Tracker',
-    description: 'Cross-chain portfolio tracking dashboard with DeFi yield aggregation, NFT valuation, and tax report generation.',
+    description: 'Portfolio dashboard architecture for cross-chain assets, DeFi positions, valuation, and reporting workflows.',
     tech: ['React', 'GraphQL', 'Ethers', 'D3.js'],
   },
   {
@@ -136,7 +137,7 @@ export const processSteps = [
   {
     step: 5,
     title: 'Review',
-    description: 'We conduct thorough code reviews, security audits, and performance optimization.',
+    description: 'We conduct code reviews, security checks, and performance testing appropriate to the project.',
   },
   {
     step: 6,
@@ -146,7 +147,7 @@ export const processSteps = [
   {
     step: 7,
     title: 'Support',
-    description: 'We provide ongoing maintenance, updates, and 24/7 infrastructure monitoring.',
+    description: 'We define ongoing maintenance, updates, and monitoring according to the agreed support scope.',
   },
 ]
 
@@ -165,15 +166,15 @@ export const whyValthera = [
   },
   {
     title: 'Security First',
-    description: 'Security baked into every layer. Smart contract audits, OWASP compliance, and data encryption.',
+    description: 'Security requirements, threat review, safe defaults, and data protection are considered throughout delivery.',
   },
   {
     title: 'Performance Optimized',
-    description: 'Sub-100ms response times, optimized bundles, and scalable cloud infrastructure.',
+    description: 'Measured performance work across bundles, runtime behavior, and cloud architecture.',
   },
   {
     title: 'Transparent Process',
-    description: 'Weekly updates, milestone demos, and direct communication with your dedicated development team.',
+    description: 'Milestone updates, demonstrations, and direct communication throughout delivery.',
   },
   {
     title: 'Long-Term Partnership',

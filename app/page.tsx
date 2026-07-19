@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import type Lenis from 'lenis'
 import Loader from '@/components/sections/Loader'
 import Hero from '@/components/sections/Hero'
 import WhatWeBuild from '@/components/sections/WhatWeBuild'
@@ -14,9 +15,14 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    let lenisInstance: any = null
+    let lenisInstance: Lenis | null = null
+    let frameId: number | undefined
+    let active = true
+
     const init = async () => {
       const Lenis = (await import('lenis')).default
+      if (!active) return
+
       lenisInstance = new Lenis({
         duration: 1.2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -25,13 +31,18 @@ export default function Home() {
         smoothWheel: true,
       })
       function raf(time: number) {
+        if (!active || !lenisInstance) return
         lenisInstance.raf(time)
-        requestAnimationFrame(raf)
+        frameId = requestAnimationFrame(raf)
       }
-      requestAnimationFrame(raf)
+      frameId = requestAnimationFrame(raf)
     }
     init()
-    return () => { if (lenisInstance) lenisInstance.destroy() }
+    return () => {
+      active = false
+      if (frameId !== undefined) cancelAnimationFrame(frameId)
+      lenisInstance?.destroy()
+    }
   }, [])
 
   return (

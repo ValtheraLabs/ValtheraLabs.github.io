@@ -23,7 +23,7 @@ const staggerVariants = {
 
 function MockupDisplay({ title }: { title: string }) {
   return (
-    <div className="mockup-frame">
+    <div className="mockup-frame" role="img" aria-label={`${title} interface preview`}>
       <div className="mockup-dots">
         <span className="mockup-dot" />
         <span className="mockup-dot" />
@@ -95,6 +95,16 @@ export default function FeaturedSystems() {
                       </span>
                     ))}
                   </div>
+                  {system.href && (
+                    <a
+                      href={system.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex mt-6 text-sm font-semibold text-accent hover:text-white transition-colors"
+                    >
+                      Visit {system.title} →
+                    </a>
+                  )}
                 </div>
               </div>
               {i < featuredSystems.length - 1 && (
