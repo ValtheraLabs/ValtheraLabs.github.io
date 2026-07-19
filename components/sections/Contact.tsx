@@ -28,13 +28,15 @@ export default function Contact() {
           Bring the ambition, constraints, and uncomfortable questions. We’ll map the clearest
           path from idea to operable product.
         </p>
-        <div className="hero-actions" style={{ justifyContent: 'center' }}>
+        <div className="contact-actions">
           <a className="button-primary" href={contactHref}>
             {contactEmail ? `${contactEmail} ↗` : 'Contact on GitHub ↗'}
           </a>
+        </div>
+        <nav aria-label="ValtheraLabs ecosystem" className="ecosystem-links">
           {ecosystemLinks.map((link) => (
             <a
-              className="button-secondary"
+              className="ecosystem-link"
               href={link.href}
               key={link.href}
               target="_blank"
@@ -43,7 +45,7 @@ export default function Contact() {
               {link.label} ↗
             </a>
           ))}
-        </div>
+        </nav>
         <div className="telemetry" style={{ marginTop: '5rem' }}>
           <span><b>01</b>DESIGN</span>
           <span><b>02</b>ENGINEERING</span>

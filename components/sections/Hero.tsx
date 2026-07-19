@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import { motion, useReducedMotion } from 'framer-motion'
+import { useState } from 'react'
 import Logo from '@/components/ui/Logo'
 
 const HeroScene = dynamic(() => import('@/components/three/HeroScene'), { ssr: false })
@@ -14,6 +15,7 @@ const nav = [
 ]
 
 export default function Hero() {
+  const [menuOpen, setMenuOpen] = useState(false)
   const reducedMotion = useReducedMotion()
   const reveal = reducedMotion ? {} : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } }
   const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim()
@@ -30,7 +32,24 @@ export default function Hero() {
             {nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
           </nav>
           <a className="nav-cta" href={contactHref}>Initiate project</a>
+          <button
+            aria-controls="mobile-navigation"
+            aria-expanded={menuOpen}
+            className="nav-menu-button"
+            onClick={() => setMenuOpen((open) => !open)}
+            type="button"
+          >
+            {menuOpen ? 'Close' : 'Menu'}
+          </button>
         </div>
+        {menuOpen && (
+          <nav aria-label="Mobile navigation" className="mobile-nav" id="mobile-navigation">
+            {nav.map(([label, href]) => (
+              <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
+            ))}
+            <a href={contactHref} onClick={() => setMenuOpen(false)}>Initiate project</a>
+          </nav>
+        )}
       </header>
 
       <div className="hero-grid section-inner">
