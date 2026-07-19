@@ -7,7 +7,7 @@ export const capabilities = [
 
 export const featuredSystems = [
   { key: 'agent', label: 'REPRESENTATIVE SYSTEM 01', title: 'Agent Operations Grid', description: 'A control surface for orchestrating tool-using agents, reviewing execution traces, and keeping humans in control of critical decisions.', tech: ['Next.js', 'Python', 'RAG', 'Event streams'] },
-  { key: 'dex', label: 'REPRESENTATIVE SYSTEM 02', title: 'On-chain Liquidity Terminal', description: 'A real-time market interface that turns dense liquidity, routing, and position data into a focused execution workflow.', tech: ['React', 'Solidity', 'Viem', 'WebSocket'] },
+  { key: 'dex', label: 'VALTHERALABS PRODUCT', title: 'ValtheraSwap', description: 'A decentralized exchange interface for liquidity, routing, position data, and focused transaction workflows.', tech: ['React', 'Solidity', 'Ethers', 'WebSocket'], href: 'https://valtheraswap.io' },
   { key: 'platform', label: 'REPRESENTATIVE SYSTEM 03', title: 'Infrastructure Command Center', description: 'A unified operational view for deployments, service health, audit trails, and incident-ready diagnostics.', tech: ['FastAPI', 'PostgreSQL', 'Docker', 'OpenTelemetry'] },
 ]
 

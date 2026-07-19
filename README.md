@@ -1,10 +1,10 @@
 # ValtheraLabs
 
-Futuristic, cinematic company site for ValtheraLabs.
+Production company website for **https://valtheralabs.io**.
 
 ## Stack
 
-- Next.js 14 static export
+- Next.js 15 static export
 - React 18 and TypeScript
 - React Three Fiber / Three.js hero scene
 - Framer Motion with reduced-motion fallback
@@ -22,6 +22,7 @@ npm run dev
 ```bash
 npm test
 npm run lint
+npm run typecheck
 npm run build
 npx serve out
 ```
@@ -30,9 +31,7 @@ The production build is written to `out/` and contains only static assets.
 
 ## Deployment
 
-The repository is configured for GitHub Pages through `.github/workflows/deploy.yml`. A push to `main` builds the static export and deploys `out/`.
-
-The same build can be imported by Vercel, but Vercel is not required unless server-side features are added later.
+Cloudflare Pages builds `out/` from GitHub. See `docs/CLOUDFLARE_DEPLOYMENT.md` and `docs/DOMAINS_AND_DNS.md`. GitHub Actions validates pull requests but does not store deployment credentials.
 
 ## Experience and accessibility
 

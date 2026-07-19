@@ -1,1 +1,59 @@
-export default function Contact(){return <footer id="contact" className="section-wrap" style={{borderTop:'1px solid var(--line)',background:'radial-gradient(circle at 50% 10%,rgba(139,92,246,.18),transparent 42%)'}}><div className="section-inner" style={{textAlign:'center'}}><p className="section-kicker">OPEN CHANNEL</p><h2 className="section-title" style={{maxWidth:900,marginInline:'auto'}}>Have a difficult system to build?</h2><p className="section-intro" style={{marginInline:'auto'}}>Bring the ambition, constraints, and uncomfortable questions. We’ll map the clearest path from idea to operable product.</p><div className="hero-actions" style={{justifyContent:'center'}}><a className="button-primary" href="mailto:hello@valtheralabs.com?subject=Project%20inquiry">hello@valtheralabs.com ↗</a><a className="button-secondary" href="https://github.com/ValtheraLabs" target="_blank" rel="noreferrer">GitHub ↗</a></div><div className="telemetry" style={{marginTop:'5rem'}}><span><b>01</b>DESIGN</span><span><b>02</b>ENGINEERING</span><span><b>03</b>VALIDATION</span><span><b>04</b>DELIVERY</span></div><p style={{color:'var(--muted)',fontSize:'.75rem',marginTop:'2rem'}}>© 2026 ValtheraLabs · Smart-contract engineering does not replace an independent audit.</p></div></footer>}
+const ecosystemLinks = [
+  { label: 'Founder — Dionis Markov', href: 'https://dionismarkov.com' },
+  { label: 'Product — ValtheraSwap', href: 'https://valtheraswap.io' },
+  { label: 'GitHub', href: 'https://github.com/ValtheraLabs' },
+]
+
+export default function Contact() {
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim()
+  const contactHref = contactEmail
+    ? `mailto:${contactEmail}?subject=Project%20inquiry`
+    : 'https://github.com/ValtheraLabs'
+
+  return (
+    <footer
+      id="contact"
+      className="section-wrap"
+      style={{
+        borderTop: '1px solid var(--line)',
+        background: 'radial-gradient(circle at 50% 10%,rgba(139,92,246,.18),transparent 42%)',
+      }}
+    >
+      <div className="section-inner" style={{ textAlign: 'center' }}>
+        <p className="section-kicker">OPEN CHANNEL</p>
+        <h2 className="section-title" style={{ maxWidth: 900, marginInline: 'auto' }}>
+          Have a difficult system to build?
+        </h2>
+        <p className="section-intro" style={{ marginInline: 'auto' }}>
+          Bring the ambition, constraints, and uncomfortable questions. We’ll map the clearest
+          path from idea to operable product.
+        </p>
+        <div className="hero-actions" style={{ justifyContent: 'center' }}>
+          <a className="button-primary" href={contactHref}>
+            {contactEmail ? `${contactEmail} ↗` : 'Contact on GitHub ↗'}
+          </a>
+          {ecosystemLinks.map((link) => (
+            <a
+              className="button-secondary"
+              href={link.href}
+              key={link.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {link.label} ↗
+            </a>
+          ))}
+        </div>
+        <div className="telemetry" style={{ marginTop: '5rem' }}>
+          <span><b>01</b>DESIGN</span>
+          <span><b>02</b>ENGINEERING</span>
+          <span><b>03</b>VALIDATION</span>
+          <span><b>04</b>DELIVERY</span>
+        </div>
+        <p style={{ color: 'var(--muted)', fontSize: '.75rem', marginTop: '2rem' }}>
+          © 2026 ValtheraLabs · Smart-contract engineering does not replace an independent audit.
+        </p>
+      </div>
+    </footer>
+  )
+}

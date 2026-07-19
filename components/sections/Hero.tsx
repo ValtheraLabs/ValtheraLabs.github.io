@@ -16,6 +16,10 @@ const nav = [
 export default function Hero() {
   const reducedMotion = useReducedMotion()
   const reveal = reducedMotion ? {} : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } }
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim()
+  const contactHref = contactEmail
+    ? `mailto:${contactEmail}?subject=Project%20inquiry`
+    : 'https://github.com/ValtheraLabs'
 
   return (
     <section className="hero-shell" aria-labelledby="hero-title">
@@ -25,7 +29,7 @@ export default function Hero() {
           <nav aria-label="Primary navigation" className="nav-links">
             {nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
           </nav>
-          <a className="nav-cta" href="mailto:hello@valtheralabs.com?subject=Project%20inquiry">Initiate project</a>
+          <a className="nav-cta" href={contactHref}>Initiate project</a>
         </div>
       </header>
 
@@ -35,7 +39,7 @@ export default function Hero() {
           <h1 id="hero-title">We engineer systems for the <span>next digital frontier.</span></h1>
           <p className="hero-lede">From agentic workflows and real-time platforms to high-integrity on-chain systems—designed, built, and shipped end to end.</p>
           <div className="hero-actions">
-            <a className="button-primary" href="mailto:hello@valtheralabs.com?subject=Project%20inquiry">Discuss a project <span aria-hidden="true">↗</span></a>
+            <a className="button-primary" href={contactHref}>Discuss a project <span aria-hidden="true">↗</span></a>
             <a className="button-secondary" href="#work">View selected work <span aria-hidden="true">↓</span></a>
           </div>
         </motion.div>
