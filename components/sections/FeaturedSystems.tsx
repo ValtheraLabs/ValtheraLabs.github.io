@@ -3,23 +3,25 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { featuredSystems } from '@/data/systems'
 
-function SystemVisual({ index, title }: { index: number; title: string }) {
-  const bars = [34, 62, 48, 86, 58, 96, 72, 52, 82, 66, 91, 74]
+function SystemVisual({ systemKey, title }: { systemKey: string; title: string }) {
+  const labels = {
+    agent: 'Agent trace',
+    dex: 'Routing map',
+    platform: 'Service topology',
+  } as const
+  const label = labels[systemKey as keyof typeof labels] ?? 'System diagram'
 
   return (
     <div className="system-visual" aria-label={`${title} interface concept`} role="img">
-      <div className="visual-panel">
+      <div className={`visual-panel visual-${systemKey}`}>
         <div className="visual-top">
-          <span>VALTHERA / {String(index + 1).padStart(2, '0')}</span>
-          <span className="visual-live">● LIVE SIGNAL</span>
+          <span>{label}</span>
+          <span className="visual-live">CONCEPT VIEW</span>
         </div>
-        <div className="visual-bars">
-          {bars.map((height, barIndex) => (
-            <i
-              key={barIndex}
-              style={{ '--h': `${Math.max(18, height - index * 4)}%` } as React.CSSProperties}
-            />
-          ))}
+        <div className="visual-diagram" aria-hidden="true">
+          {systemKey === 'agent' && <><i /><i /><i /><i /><i /></>}
+          {systemKey === 'dex' && <><b>IN</b><i /><i /><i /><b>OUT</b></>}
+          {systemKey === 'platform' && <><i /><i /><i /><i /><i /><i /></>}
         </div>
       </div>
     </div>
@@ -39,7 +41,7 @@ export default function FeaturedSystems() {
           illustrate capability—not undisclosed client claims.
         </p>
         <div className="systems-grid" style={{ marginTop: '3rem' }}>
-          {featuredSystems.map((system, index) => (
+          {featuredSystems.map((system) => (
             <motion.article
               className="system-card"
               key={system.key}
@@ -65,7 +67,7 @@ export default function FeaturedSystems() {
                   </a>
                 )}
               </div>
-              <SystemVisual index={index} title={system.title} />
+              <SystemVisual systemKey={system.key} title={system.title} />
             </motion.article>
           ))}
         </div>

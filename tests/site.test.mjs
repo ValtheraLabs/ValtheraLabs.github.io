@@ -37,3 +37,23 @@ test('global styles support keyboard and reduced-motion users', async () => {
   assert.match(css, /:focus-visible/)
   assert.match(css, /prefers-reduced-motion/)
 })
+
+test('mobile navigation remains available and exposes dialog state', async () => {
+  const hero = await read('components/sections/Hero.tsx')
+  assert.match(hero, /aria-expanded/)
+  assert.match(hero, /aria-controls=["']mobile-navigation["']/)
+  assert.match(hero, /id=["']mobile-navigation["']/)
+})
+
+test('featured systems use distinct explanatory visuals', async () => {
+  const systems = await read('components/sections/FeaturedSystems.tsx')
+  for (const label of ['Agent trace', 'Routing map', 'Service topology']) {
+    assert.match(systems, new RegExp(label, 'i'))
+  }
+})
+
+test('contact keeps one primary action and quieter ecosystem links', async () => {
+  const contact = await read('components/sections/Contact.tsx')
+  assert.equal((contact.match(/button-primary/g) ?? []).length, 1)
+  assert.match(contact, /ecosystem-link/)
+})
