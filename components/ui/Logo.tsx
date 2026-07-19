@@ -1,17 +1,18 @@
 'use client'
 
+import { useId } from 'react'
+
 interface LogoProps {
   size?: number
   showWordmark?: boolean
   className?: string
 }
 
-const defsId = 'logo-defs-' + (typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2))
-
 export default function Logo({ size = 28, showWordmark = true, className = '' }: LogoProps) {
+  const defsId = useId().replace(/:/g, '')
   return (
     <div className={`inline-flex items-center gap-3 ${className}`}>
-      <svg viewBox="0 0 200 200" width={size} height={size}>
+      <svg viewBox="0 0 200 200" width={size} height={size} aria-hidden="true" focusable="false">
         <defs>
           <linearGradient id={`${defsId}-b1`} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#E8E8E8"/><stop offset="50%" stopColor="#A0A0A0"/><stop offset="100%" stopColor="#505050"/>

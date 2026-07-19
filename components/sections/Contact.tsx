@@ -1,111 +1,59 @@
-'use client'
-
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.12 },
-  },
-}
-
-const childVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' },
-  },
-}
-
 const ecosystemLinks = [
-  { name: 'GitHub', href: 'https://github.com/ValtheraLabs' },
-  { name: 'Dionis Markov', href: 'https://dionismarkov.com' },
-  { name: 'ValtheraSwap', href: 'https://valtheraswap.io' },
+  { label: 'Founder — Dionis Markov', href: 'https://dionismarkov.com' },
+  { label: 'Product — ValtheraSwap', href: 'https://valtheraswap.io' },
+  { label: 'GitHub', href: 'https://github.com/ValtheraLabs' },
 ]
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
   const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim()
   const contactHref = contactEmail
-    ? `mailto:${contactEmail}`
+    ? `mailto:${contactEmail}?subject=Project%20inquiry`
     : 'https://github.com/ValtheraLabs'
 
   return (
-    <section id="contact" className="section-wrap">
-      <div className="section-inner">
-        <div className="w-full h-px bg-border mb-20" />
-
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="flex flex-col items-center text-center"
-        >
-          <motion.h2
-            variants={childVariants}
-            className="text-3xl md:text-4xl font-black text-white mb-8 max-w-2xl"
-          >
-            Build your next system with ValtheraLabs
-          </motion.h2>
-
-          <motion.div
-            variants={childVariants}
-            className="flex flex-col sm:flex-row items-center gap-4 mb-8"
-          >
+    <footer
+      id="contact"
+      className="section-wrap"
+      style={{
+        borderTop: '1px solid var(--line)',
+        background: 'radial-gradient(circle at 50% 10%,rgba(139,92,246,.18),transparent 42%)',
+      }}
+    >
+      <div className="section-inner" style={{ textAlign: 'center' }}>
+        <p className="section-kicker">OPEN CHANNEL</p>
+        <h2 className="section-title" style={{ maxWidth: 900, marginInline: 'auto' }}>
+          Have a difficult system to build?
+        </h2>
+        <p className="section-intro" style={{ marginInline: 'auto' }}>
+          Bring the ambition, constraints, and uncomfortable questions. We’ll map the clearest
+          path from idea to operable product.
+        </p>
+        <div className="hero-actions" style={{ justifyContent: 'center' }}>
+          <a className="button-primary" href={contactHref}>
+            {contactEmail ? `${contactEmail} ↗` : 'Contact on GitHub ↗'}
+          </a>
+          {ecosystemLinks.map((link) => (
             <a
-              href={contactHref}
-              className="bg-accent text-white rounded-lg px-8 py-3 text-sm font-semibold hover:bg-accent/90 transition-all duration-300"
+              className="button-secondary"
+              href={link.href}
+              key={link.href}
+              target="_blank"
+              rel="noreferrer"
             >
-              Start a Project
+              {link.label} ↗
             </a>
-            <a
-              href="https://dionismarkov.com"
-              className="border border-border text-silver rounded-lg px-8 py-3 text-sm font-semibold hover:border-accent/50 hover:text-accent transition-all duration-300"
-            >
-              Contact Us
-            </a>
-          </motion.div>
-
-          {contactEmail && (
-            <motion.a
-              variants={childVariants}
-              href={`mailto:${contactEmail}`}
-              className="font-mono text-sm text-silver/60 hover:text-accent transition-colors duration-300"
-            >
-              {contactEmail}
-            </motion.a>
-          )}
-
-          <motion.div
-            variants={childVariants}
-            className="flex items-center gap-6 mt-8"
-          >
-            {ecosystemLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className="font-mono text-xs text-silver/40 hover:text-accent transition-colors duration-300"
-              >
-                {link.name}
-              </a>
-            ))}
-          </motion.div>
-
-          <motion.p
-            variants={childVariants}
-            className="font-mono text-xs text-silver/20 mt-12"
-          >
-            &copy; 2026 ValtheraLabs. All rights reserved.
-          </motion.p>
-        </motion.div>
+          ))}
+        </div>
+        <div className="telemetry" style={{ marginTop: '5rem' }}>
+          <span><b>01</b>DESIGN</span>
+          <span><b>02</b>ENGINEERING</span>
+          <span><b>03</b>VALIDATION</span>
+          <span><b>04</b>DELIVERY</span>
+        </div>
+        <p style={{ color: 'var(--muted)', fontSize: '.75rem', marginTop: '2rem' }}>
+          © 2026 ValtheraLabs · Smart-contract engineering does not replace an independent audit.
+        </p>
       </div>
-    </section>
+    </footer>
   )
 }

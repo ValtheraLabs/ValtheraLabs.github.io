@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
-    "test": "node scripts/test-site-regressions.mjs"
+    "test": "node scripts/test-site-regressions.mjs && node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^9.114.0",

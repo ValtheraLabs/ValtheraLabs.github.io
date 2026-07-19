@@ -1,90 +1,44 @@
 # ValtheraLabs
 
-**Engineering Intelligent Digital Systems**
+Production company website for **https://valtheralabs.io**.
 
-**https://valtheralabs.io**
+## Stack
 
-ValtheraLabs company website — cinematic 3D technology showcase built with Next.js, Three.js, GSAP, and Framer Motion.
+- Next.js 15 static export
+- React 18 and TypeScript
+- React Three Fiber / Three.js hero scene
+- Framer Motion with reduced-motion fallback
+- Tailwind CSS plus a custom responsive design system
 
-## Tech Stack
-
-| Layer | Technologies |
-|-------|-------------|
-| Framework | Next.js 15, React 18, TypeScript |
-| Styling | Tailwind CSS, Glassmorphism design system |
-| 3D Graphics | Three.js, React Three Fiber, Drei |
-| Animations | GSAP, ScrollTrigger, Framer Motion |
-| Scroll | Lenis smooth scroll |
-| Font | Inter |
-
-## Sections
-
-1. **Loader** — Cinematic Three.js loading animation with rotating octahedron and particles
-2. **Hero** — Full-viewport interactive 3D scene with emblem, orbiting particles, neural network lines, and cinematic camera
-3. **What We Build** — 14 capability cards (AI, Web, Blockchain, Infrastructure)
-4. **Featured Systems** — 6 premium showcases with alternating layouts
-5. **Technology Stack** — 25+ technologies across 5 categories
-6. **Process** — 7-step development methodology timeline
-7. **Why ValtheraLabs** — 7 brand pillar glassmorphism cards
-8. **Contact** — CTA section with footer
-
-## Getting Started
+## Local development
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-## Build
+## Verification
 
 ```bash
+npm test
+npm run lint
+npm run typecheck
 npm run build
+npx serve out
 ```
 
-Static export output in `out/`.
+The production build is written to `out/` and contains only static assets.
 
-## Project Structure
+## Deployment
 
-```
-├── app/
-│   ├── globals.css         # Global styles + Tailwind
-│   ├── layout.tsx          # Root layout + SEO metadata
-│   └── page.tsx            # Main page (Lenis + section imports)
-├── components/
-│   ├── sections/           # Page sections
-│   │   ├── Contact.tsx
-│   │   ├── FeaturedSystems.tsx
-│   │   ├── Hero.tsx
-│   │   ├── Loader.tsx
-│   │   ├── Process.tsx
-│   │   ├── TechStack.tsx
-│   │   ├── WhatWeBuild.tsx
-│   │   └── WhyValthera.tsx
-│   ├── three/              # Three.js 3D components
-│   │   ├── Emblem.tsx
-│   │   ├── HeroScene.tsx
-│   │   ├── LoaderScene.tsx
-│   │   └── Particles.tsx
-│   └── ui/                 # Reusable UI components
-│       ├── Button.tsx
-│       └── GlassCard.tsx
-├── data/
-│   └── systems.ts          # All content data
-├── public/
-│   ├── .nojekyll
-│   ├── robots.txt
-│   └── sitemap.xml
-├── .github/workflows/
-│   └── deploy.yml          # GitHub Pages deploy workflow
-└── next.config.js
-```
+Cloudflare Pages builds `out/` from GitHub. See `docs/CLOUDFLARE_DEPLOYMENT.md` and `docs/DOMAINS_AND_DNS.md`. GitHub Actions validates pull requests but does not store deployment credentials.
 
-## Validation and deployment
+## Experience and accessibility
 
-Pull requests run linting, type checking, regression tests, dependency audit, and the static production build. Production is deployed from GitHub through Cloudflare Pages native Git integration. See `docs/CLOUDFLARE_DEPLOYMENT.md` and `docs/DOMAINS_AND_DNS.md`.
+- Real-time 3D hero scene on capable devices
+- Static fallback for reduced-motion users
+- Keyboard focus treatment and skip navigation
+- Responsive layouts for mobile, tablet, and desktop
+- Truthful representative-system labels instead of unsupported client claims
 
-## License
-
-MIT
+Smart-contract engineering guidance and implementation are not substitutes for an independent security audit.
